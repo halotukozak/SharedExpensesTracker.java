@@ -1,6 +1,6 @@
 package splitter.db;
 
-import splitter.model.Bill;
+import splitter.db.model.Bill;
 
 import java.time.LocalDate;
 import java.util.HashSet;

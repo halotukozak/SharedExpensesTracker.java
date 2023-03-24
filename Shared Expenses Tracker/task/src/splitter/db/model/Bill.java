@@ -1,4 +1,4 @@
-package splitter.model;
+package splitter.db.model;
 
 import java.time.LocalDate;
 

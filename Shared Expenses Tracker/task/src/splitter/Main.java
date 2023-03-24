@@ -18,10 +18,12 @@ public class Main {
             try {
                 switch (command) {
                     case help ->
-                            List.of(balance.name(), borrow.name(), exit.name(), help.name(), repay.name()).forEach(System.out::println);
+                            List.of(balance.name(), borrow.name(), exit.name(), group.name(), help.name(), purchase.name(), repay.name()).forEach(System.out::println);
                     case borrow -> bankService.borrow(input);
                     case repay -> bankService.repay(input);
                     case balance -> bankService.balance(input);
+                    case group -> bankService.group(input);
+                    case purchase -> bankService.purchase(input);
                     case unknown -> System.out.println("Unknown command. Print help to show commands list");
                 }
             } catch (IllegalCommandArguments e) {
@@ -34,7 +36,7 @@ public class Main {
 
 
     enum COMMAND {
-        balance, borrow, exit, help, repay, unknown;
+        balance, borrow, exit, group, help, purchase, repay, unknown;
 
         static public COMMAND parseCommand(String input) {
             for (var command : values()) if (input.contains(command.name())) return command;
